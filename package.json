@@ -19,7 +19,8 @@
     "js-sha3": "^0.8.0",
     "nem2-sdk": "^0.15.0",
     "rxjs": "^6.5.3",
-    "tiny-secp256k1": "^1.1.3"
+    "tiny-secp256k1": "^1.1.3",
+    "snyk": "^1.316.1"
   },
   "devDependencies": {
     "@types/chai": "^4.2.5",
@@ -38,7 +39,9 @@
     "test": "mocha --ui bdd --recursive ./dist/test",
     "test:cov-html": "nyc --reporter=html npm t",
     "test:coverage": "nyc --reporter=text-lcov npm t",
-    "report-coverage": "nyc report --reporter=text-lcov | coveralls"
+    "report-coverage": "nyc report --reporter=text-lcov | coveralls",
+    "snyk-protect": "snyk protect",
+    "prepare": "npm run snyk-protect"
   },
   "repository": {
     "type": "git",
@@ -53,5 +56,6 @@
     "exclude": [
       "**/*.spec.js"
     ]
-  }
+  },
+  "snyk": true
 }
